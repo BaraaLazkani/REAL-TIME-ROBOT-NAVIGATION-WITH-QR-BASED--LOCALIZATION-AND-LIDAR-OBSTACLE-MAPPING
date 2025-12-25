@@ -66,3 +66,8 @@ temp/
 
 # Demo videos (stored on YouTube, kept locally)
 docs/media/*.mp4
+
+# Simulation outputs (keep PNG plots, ignore Python cache and demo video)
+Simulation/__pycache__/
+Simulation/*.pyc
+Simulation/Simulation_Demo.mp4

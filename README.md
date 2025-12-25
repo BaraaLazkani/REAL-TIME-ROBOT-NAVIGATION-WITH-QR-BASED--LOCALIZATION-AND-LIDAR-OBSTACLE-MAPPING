@@ -27,6 +27,7 @@
 - [Tasks](#tasks)
 - [Configuration](#configuration)
 - [Results](#results)
+- [Simulation](#simulation)
 - [Team](#team)
 - [License](#license)
 - [Citation](#citation)
@@ -253,6 +254,16 @@ robot-navigation/
 │   ├── capture_images.py
 │   └── README.md
 │
+├── 🎮 Simulation/                # Python simulation environment
+│   ├── RobotSim.py              # Simulation engine
+│   ├── RobotControl.py          # Control integration
+│   ├── KalmanFilter.py          # Kalman filter
+│   ├── DiffDriveController.py   # Diff drive controller
+│   ├── shortestpath.py          # Dijkstra's algorithm
+│   ├── generate_plots.py        # Visualization generator
+│   ├── params.yaml              # Simulation config
+│   └── README.md                # Simulation guide
+│
 └── 🛠️  scripts/                   # Utility scripts
     └── setup_environment.sh     # Raspberry Pi auto-setup
 ```
@@ -348,6 +359,73 @@ See [TECHNICAL.md](TECHNICAL.md) for detailed parameter explanations.
 *[See demonstration videos in docs/media/ for visual results]*
 
 For detailed experimental results, plots, and analysis, see **[TECHNICAL.md](TECHNICAL.md#experimental-results)**.
+
+---
+
+## Simulation
+
+### 🎮 Python-Based Virtual Environment
+
+Before deploying to hardware, algorithms were tested and validated in a **Python simulation environment**. The simulation implements the complete navigation stack (Dijkstra path planning, Kalman filtering, differential drive control) in a virtual testbed.
+
+**📺 Watch the simulation in action:** [YouTube Demo](https://youtu.be/W2GyEFLIgFA)
+
+The `Simulation/` directory contains the source code and **7 comprehensive visualizations** including:
+
+| Visualization | Description |
+|---------------|-------------|
+| **Environment Map** | Obstacle layout + marker positions |
+| **Path Planning** | Dijkstra's algorithm visualization |
+| **Trajectory Analysis** | Ground truth vs Kalman comparison |
+| **Controller Analysis** | Velocity profiles and control signals |
+| **Sensor Fusion** | IMU + ArUco → Kalman filter |
+| **Error Metrics** | Comprehensive error analysis |
+| **Path Scenarios** | 4 different navigation scenarios |
+
+### Key Features
+
+- **🗺️ Path Planning**: Dijkstra's algorithm for shortest obstacle-free path
+- **📊 State Estimation**: Kalman filter with simulated sensor noise
+- **🎯 Diff Drive Control**: Proportional controller for navigation
+- **📈 Visualization**: Real-time trajectory plotting and error analysis
+
+### Simulation Results
+
+#### Environment & Path Planning
+
+<p align="center">
+  <img src="Simulation/plots/simulation_environment.png" alt="Simulation Environment" width="45%"/>
+  <img src="Simulation/plots/simulation_path_planning.png" alt="Path Planning" width="45%"/>
+</p>
+
+#### Performance Analysis
+
+<p align="center">
+  <img src="Simulation/plots/simulation_sensor_fusion.png" alt="Sensor Fusion" width="48%"/>
+  <img src="Simulation/plots/simulation_controller.png" alt="Controller Analysis" width="48%"/>
+</p>
+
+<p align="center">
+  <img src="Simulation/plots/simulation_error_analysis.png" alt="Error Analysis" width="48%"/>
+  <img src="Simulation/plots/simulation_path_scenarios.png" alt="Path Scenarios" width="48%"/>
+</p>
+
+<details>
+<summary><b>📊 Click to see Trajectory Comparison</b></summary>
+<br>
+<p align="center">
+  <img src="Simulation/plots/simulation_trajectory.png" alt="Trajectory Analysis" width="90%"/>
+</p>
+</details>
+
+### Why Simulate?
+
+✅ **Safe Testing**: Validate algorithms before hardware deployment
+✅ **Parameter Tuning**: Optimize controller gains risk-free
+✅ **Edge Cases**: Test scenarios difficult to reproduce physically
+✅ **Ground Truth**: Compare estimates against perfect position knowledge
+
+See **[Simulation/README.md](Simulation/README.md)** for complete documentation and usage instructions.
 
 ---
 
