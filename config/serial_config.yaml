@@ -1,0 +1,50 @@
+# Serial Communication Configuration
+# Port names and baud rates for Raspberry Pi ↔ Arduino communication
+
+task1:
+  arduino_port: "/dev/ttyACM0"  # USB serial port for Arduino
+  baud_rate: 9600               # Slower rate for Task 1
+  timeout: 0.1                  # seconds
+
+  # Communication protocol
+  start_signal: "START\n"
+  terminator: "#"
+
+task2:
+  arduino_port: "/dev/ttyACM0"  # USB serial port for Arduino
+  lidar_port: "/dev/ttyUSB0"    # USB serial port for RPLIDAR
+
+  arduino_baud: 115200          # Higher rate for Task 2 (LIDAR data)
+  lidar_baud: 115200            # RPLIDAR communication rate
+
+  timeout: 0.1                  # seconds
+
+  # Communication protocol
+  start_signal: "START\n"
+  terminator: "#"
+
+  # Buffer management
+  max_buffer_size: 25           # Clear buffer if exceeded
+
+# Platform-specific port mapping
+# Uncomment and modify based on your system
+platform_ports:
+  linux:
+    arduino: "/dev/ttyACM0"
+    lidar: "/dev/ttyUSB0"
+
+  # windows:
+  #   arduino: "COM3"
+  #   lidar: "COM4"
+
+  # macos:
+  #   arduino: "/dev/cu.usbmodem*"
+  #   lidar: "/dev/cu.usbserial*"
+
+# Serial data formats
+data_format:
+  aruco: "{count}x{x}y{y}t{theta}i{id}x...#"
+  lidar: "s{angle}s{angle}s...#"
+
+  # Example ArUco: "2x0.52y1.34t0.98i7x0.61y1.28t1.02i9#"
+  # Example LIDAR: "s0s5s10s15s340s345s350s355#"

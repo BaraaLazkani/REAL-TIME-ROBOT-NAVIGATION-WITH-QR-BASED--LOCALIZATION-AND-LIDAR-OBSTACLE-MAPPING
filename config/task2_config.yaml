@@ -1,0 +1,82 @@
+# Task 2: SLAM with LIDAR Navigation
+# Configuration for obstacle avoidance using LIDAR and ArUco localization
+
+task_name: "SLAM with LIDAR Navigation"
+description: "Robot navigates to goal while avoiding obstacles detected by LIDAR"
+
+# ArUco marker detection parameters
+aruco:
+  dictionary: "DICT_4X4_50"
+  marker_size: 0.096  # meters
+
+  # Detection validation thresholds
+  validation:
+    area_threshold_low: 1200
+    area_threshold_high: 7100
+    error_threshold_low_area: 1.4
+    error_threshold_high_area: 4.5
+
+# ArUco marker positions in world frame
+markers:
+  - id: 7
+    x: 0.6      # meters
+    y: 0.0      # meters
+    theta: -1.5708  # radians
+
+  - id: 9
+    x: 1.8
+    y: -1.2
+    theta: -1.5708
+
+  - id: 8
+    x: 1.2
+    y: -0.6
+    theta: -1.5708
+
+# Final navigation goal
+goal:
+  x: 1.8  # meters
+  y: -0.6  # meters
+
+# LIDAR parameters
+lidar:
+  max_distance: 1.5  # meters (obstacles beyond this are ignored)
+  min_distance: 0.001  # meters (minimum detection range)
+  sector_width: 5    # degrees (360° divided into sectors)
+
+  # Obstacle inflation for safety margin
+  obstacle_inflation: 20  # degrees (±20° = 40° total buffer around obstacles)
+
+  # Dynamic window approach parameters
+  local_goal_radius: 0.8  # meters (search radius for intermediate goals)
+  search_resolution: 5    # degrees (angular resolution for goal search)
+
+# Navigation controller gains
+navigation:
+  kp: 0.9           # Proportional gain for distance
+  ka: 8.0           # Gain for angle to goal (lower than Task 1 for smoother turns)
+  kb: 0.0           # Gain for final orientation
+  threshold: 0.22   # Goal reached threshold in meters
+  transition_delay: 3000  # milliseconds (wait time between local goals)
+
+# Kalman filter parameters
+kalman_filter:
+  # Process noise covariance Q
+  process_noise_q:
+    v: 0.04
+    omega: 0.000064
+
+  # Measurement noise covariance R
+  measurement_noise_r:
+    x: 0.0001
+    y: 0.0001
+    theta: 0.1
+
+  # Initial state covariance P
+  initial_covariance:
+    diagonal: 0.001
+
+# Processing rate limits
+processing:
+  aruco_update_interval: 3  # Process ArUco every N cycles
+  lidar_update_interval: 1   # Process LIDAR every cycle

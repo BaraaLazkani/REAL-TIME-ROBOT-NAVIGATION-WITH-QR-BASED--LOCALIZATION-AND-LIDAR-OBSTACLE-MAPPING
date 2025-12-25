@@ -1,0 +1,25 @@
+# Camera Calibration Configuration
+# Generated from calibration process using 4x4 chessboard pattern
+
+camera:
+  # Camera intrinsic matrix (K)
+  matrix:
+    - [583.39999978, 0.0, 317.26971098]
+    - [0.0, 568.87700109, 226.74554456]
+    - [0.0, 0.0, 1.0]
+
+  # Radial and tangential distortion coefficients
+  # [k1, k2, p1, p2, k3]
+  distortion_coefficients: [0.437606760, -2.53165723, -0.00130981396, 0.0146723672, 4.64273442]
+
+  # Camera resolution
+  resolution:
+    width: 640
+    height: 480
+
+  # Calibration quality metrics
+  calibration_info:
+    reprojection_error: 0.30997
+    num_calibration_images: 42
+    chessboard_size: [4, 4]
+    square_size_mm: 96

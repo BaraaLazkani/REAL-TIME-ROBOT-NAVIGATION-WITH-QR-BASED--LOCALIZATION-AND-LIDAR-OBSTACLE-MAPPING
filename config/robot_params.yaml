@@ -1,0 +1,45 @@
+# Robot Hardware Parameters
+# Physical dimensions and kinematic constraints
+
+robot:
+  # Wheel parameters
+  wheel_radius: 0.032  # meters
+  wheel_base: 0.13     # meters (distance between wheels)
+
+  # Velocity limits
+  max_speed: 0.836     # m/s
+  max_omega: 12.863    # rad/s (maximum angular velocity)
+
+  # Motor control calibration
+  pwm_calibration:
+    speed_to_pwm_ratio: 304.878  # 150/0.492
+    max_pwm: 255
+    min_pwm: 0
+
+  # Gear ratio
+  gear_ratio: 48  # 1:48
+
+# Camera-to-Body Transformation
+# Transforms coordinates from camera frame to robot body frame
+camera_to_body_transform:
+  # 4x4 homogeneous transformation matrix
+  # Rotation + Translation from camera to robot center
+  matrix:
+    - [0, 0, 1, 0.10]
+    - [-1, 0, 0, -0.02]
+    - [0, -1, 0, 0.022]
+    - [0, 0, 0, 1]
+
+  # Description: Camera mounted on robot with specific offset and orientation
+  description: "Camera is offset 10cm forward, 2cm left, 2.2cm up from robot center"
+
+# Motor pin configuration (Arduino)
+motor_pins:
+  left_motor:
+    in1: 7
+    in2: 6
+    enable: 5  # PWM pin
+  right_motor:
+    in3: 8
+    in4: 9
+    enable: 10  # PWM pin

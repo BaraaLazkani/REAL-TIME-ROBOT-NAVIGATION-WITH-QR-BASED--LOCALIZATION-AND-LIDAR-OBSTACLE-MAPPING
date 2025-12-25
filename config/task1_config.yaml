@@ -1,0 +1,79 @@
+# Task 1: ArUco Marker-Based Robot Localization
+# Configuration for waypoint navigation using visual markers
+
+task_name: "ArUco Marker Localization"
+description: "Robot navigates through predefined waypoints using ArUco markers for localization"
+
+# ArUco marker detection parameters
+aruco:
+  dictionary: "DICT_4X4_50"  # OpenCV ArUco dictionary type
+  marker_size: 0.096  # meters (96mm)
+
+  # Detection validation thresholds
+  validation:
+    area_threshold_low: 1200
+    area_threshold_high: 7100
+    error_threshold_low_area: 1.4    # Reprojection error for small markers
+    error_threshold_high_area: 4.5   # Reprojection error for large markers
+
+# ArUco marker positions in world frame
+# Update these coordinates to match your physical marker placement
+markers:
+  - id: 6
+    x: 1.2      # meters
+    y: 1.6      # meters
+    theta: -1.5708  # radians (-π/2)
+
+  - id: 7
+    x: 1.6
+    y: -0.8
+    theta: -1.5708
+
+  - id: 8
+    x: 0.8
+    y: 0.0
+    theta: -1.5708
+
+  # Add more markers as needed
+  # - id: 9
+  #   x: ...
+  #   y: ...
+  #   theta: ...
+
+# Waypoint navigation goals
+# Robot will visit these points in sequence
+waypoints:
+  - x: 0.353
+    y: -0.353
+
+  - x: 0.806
+    y: -0.564
+
+  - x: 1.6
+    y: 0.0
+
+# Navigation controller gains
+navigation:
+  kp: 0.9           # Proportional gain for distance error
+  ka: 20.0          # Gain for angle to goal
+  kb: 0.0           # Gain for final orientation (usually 0)
+  threshold: 0.25   # Goal reached threshold in meters
+
+# Kalman filter parameters
+kalman_filter:
+  # Process noise covariance Q
+  # Higher values = less trust in prediction model
+  process_noise_q:
+    v: 0.04           # Linear velocity noise
+    omega: 0.000064   # Angular velocity noise
+
+  # Measurement noise covariance R
+  # Lower values = more trust in measurements
+  measurement_noise_r:
+    x: 0.0001         # Position x measurement noise
+    y: 0.0001         # Position y measurement noise
+    theta: 0.1        # Orientation measurement noise
+
+  # Initial state covariance P
+  initial_covariance:
+    diagonal: 0.001
