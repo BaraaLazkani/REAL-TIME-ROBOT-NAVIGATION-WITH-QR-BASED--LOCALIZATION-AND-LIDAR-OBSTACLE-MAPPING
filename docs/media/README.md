@@ -10,7 +10,7 @@ This directory contains demonstration videos of the robot navigation system in a
 - `demo_04.mp4` - Demonstration video 4
 - `demo_05.mp4` - Demonstration video 5
 - `demo_06.mp4` - Demonstration video 6
-- `demo_full_run.mp4` - Full system demonstration
+- `demo_07.mp4` - Demonstration video 7
 
 ## Total Size
 

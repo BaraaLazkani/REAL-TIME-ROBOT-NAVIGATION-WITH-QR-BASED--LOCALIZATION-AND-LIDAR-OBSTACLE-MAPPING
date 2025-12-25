@@ -9,7 +9,7 @@
 > **An autonomous mobile robot navigation system integrating visual localization, sensor fusion, and LIDAR-based obstacle avoidance for indoor environments.**
 
 <p align="center">
-  <img src="docs/media/demo_full_run.mp4" alt="Robot Demo" width="600"/>
+  <img src="docs/media/demo_07.mp4" alt="Robot Demo" width="600"/>
 </p>
 
 ---
