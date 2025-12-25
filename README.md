@@ -9,7 +9,9 @@
 > **An autonomous mobile robot navigation system integrating visual localization, sensor fusion, and LIDAR-based obstacle avoidance for indoor environments.**
 
 <p align="center">
-  <img src="docs/media/demo_07.mp4" alt="Robot Demo" width="600"/>
+  <a href="https://www.youtube.com/playlist?list=PLPltBpN1wF6AVFg1B2o3nOTB_6zbEckF2">
+    <b>📺 Watch Demo Videos on YouTube</b>
+  </a>
 </p>
 
 ---
@@ -98,13 +100,15 @@ This project demonstrates a **hybrid computational architecture** for autonomous
 
 ### 🎥 Video Demonstrations
 
-See [docs/media/](docs/media/) for demonstration videos showcasing:
+**[Watch on YouTube Playlist](https://www.youtube.com/playlist?list=PLPltBpN1wF6AVFg1B2o3nOTB_6zbEckF2)**
+
+The demonstration videos showcase:
 - Real-time ArUco marker tracking
 - Kalman filter pose estimation
 - Waypoint navigation execution
 - LIDAR obstacle avoidance
 
-*Note: Videos will be uploaded to YouTube for easier streaming. Links coming soon!*
+See [docs/media/README.md](docs/media/README.md) for video descriptions.
 
 ---
 
@@ -414,7 +418,7 @@ Special thanks to the open-source robotics community.
 - 📖 Read the [Technical Documentation](TECHNICAL.md) for implementation details
 - 🏗️ Check [Architecture Diagrams](docs/ARCHITECTURE.md) for system understanding
 - 📚 Review the [Full Report](docs/report.pdf) for theoretical background
-- 🎬 Watch [Demo Videos](docs/media/) for visual examples
+- 🎬 Watch [Demo Videos](https://www.youtube.com/playlist?list=PLPltBpN1wF6AVFg1B2o3nOTB_6zbEckF2) for visual examples
 
 ---
 
@@ -426,5 +430,5 @@ Special thanks to the open-source robotics community.
   <a href="TECHNICAL.md">📘 Technical Docs</a> •
   <a href="docs/ARCHITECTURE.md">🏗️ Architecture</a> •
   <a href="docs/report.pdf">📄 Report</a> •
-  <a href="docs/media/">🎬 Videos</a>
+  <a href="https://www.youtube.com/playlist?list=PLPltBpN1wF6AVFg1B2o3nOTB_6zbEckF2">🎬 Videos</a>
 </p>

@@ -64,6 +64,5 @@ temp/
 # Claude Code Plans
 .claude/
 
-# Future: Uncomment when videos are moved to YouTube
-# docs/media/*.mp4
-# *.mp4
+# Demo videos (stored on YouTube, kept locally)
+docs/media/*.mp4

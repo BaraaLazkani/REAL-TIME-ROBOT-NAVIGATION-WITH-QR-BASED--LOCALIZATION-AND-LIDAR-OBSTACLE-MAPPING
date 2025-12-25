@@ -2,28 +2,25 @@
 
 This directory contains demonstration videos of the robot navigation system in action.
 
+## 📺 YouTube Playlist
+
+**Watch all demos:** [YouTube Playlist](https://www.youtube.com/playlist?list=PLPltBpN1wF6AVFg1B2o3nOTB_6zbEckF2)
+
+All demonstration videos are available on YouTube for easier access and streaming.
+
 ## Available Videos
 
-- `demo_01.mp4` - Demonstration video 1
-- `demo_02.mp4` - Demonstration video 2
-- `demo_03.mp4` - Demonstration video 3 (largest file, comprehensive demo)
-- `demo_04.mp4` - Demonstration video 4
-- `demo_05.mp4` - Demonstration video 5
-- `demo_06.mp4` - Demonstration video 6
-- `demo_07.mp4` - Demonstration video 7
+The following videos are available in the [YouTube playlist](https://www.youtube.com/playlist?list=PLPltBpN1wF6AVFg1B2o3nOTB_6zbEckF2):
 
-## Total Size
+- **Demo 1** - Demonstration video 1
+- **Demo 2** - Demonstration video 2
+- **Demo 3** - Demonstration video 3 (comprehensive demo)
+- **Demo 4** - Demonstration video 4
+- **Demo 5** - Demonstration video 5
+- **Demo 6** - Demonstration video 6
+- **Demo 7** - Demonstration video 7
 
-Approximately 324MB of demonstration content.
-
-## YouTube Playlist
-
-*Videos will be uploaded to YouTube for easier access and streaming.*
-
-**Coming Soon:**
-- Full playlist link
-- Individual video descriptions
-- Timestamps for key features
+*Note: Video files are stored locally but not uploaded to GitHub (see `.gitignore`).*
 
 ## Usage
 
