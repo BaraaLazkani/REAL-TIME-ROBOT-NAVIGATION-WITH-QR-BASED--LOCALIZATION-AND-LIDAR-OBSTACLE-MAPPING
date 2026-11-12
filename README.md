@@ -436,7 +436,7 @@ See **[Simulation/README.md](Simulation/README.md)** for complete documentation 
 - **Alaa Hussein**
 - **Baraa Lazkani**
 - **Haidar Saad**
-- **Humam Yehia**
+- **Humam Yehi**
 
 🎓 **Supervised by:**
 
